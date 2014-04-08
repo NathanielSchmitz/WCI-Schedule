@@ -1,0 +1,109 @@
+<schedule>
+    <year_start>2013-09-04T12:14:00Z</year_start>
+    <year_end>2014-07-01T18:40:00Z</year_end>
+    <day_types>
+        <all_period_day>
+            <period block="A" start="08:15" end="08:50"></period>
+            <period block="B" start="08:54" end="09:29"></period>
+            <period block="D" start="09:33" end="10:08"></period>
+            <period block="C" start="10:12" end="10:47"></period>
+            <period block="E" start="10:51" end="11:26"></period>
+            <period block="F" start="11:30" end="12:05"></period>
+            <period block="H" start="12:09" end="12:44"></period>
+            <period block="G" start="12:48" end="13:23"></period>
+            <period block="I" start="13:27" end="14:02"></period>
+            <period block="J" start="14:06" end="14:40"></period>
+        </all_period_day>
+        <day_1>
+            <period block="A" start="08:14" end="09:15"></period>
+            <period block="B" start="09:19" end="10:20"></period>
+            <period block="E" start="10:24" end="11:25"></period>
+            <period block="F" start="11:29" end="12:30"></period>
+            <period block="I" start="12:34" end="13:35"></period>
+            <period block="J" start="13:39" end="14:40"></period>
+        </day_1>
+        <day_2>
+            <period block="C" start="08:14" end="09:15"></period>
+            <period block="D" start="09:19" end="10:20"></period>
+            <period block="E" start="10:24" end="11:25"></period>
+            <period block="F" start="11:29" end="12:30"></period>
+            <period block="G" start="12:34" end="13:35"></period>
+            <period block="H" start="13:39" end="14:40"></period>
+        </day_2>
+        <day_3>
+            <period block="A" start="08:14" end="09:15"></period>
+            <period block="B" start="09:19" end="10:20"></period>
+            <period block="C" start="10:24" end="11:25"></period>
+            <period block="H" start="11:29" end="12:30"></period>
+            <period block="I" start="12:34" end="13:35"></period>
+            <period block="J" start="13:39" end="14:40"></period>
+        </day_3>
+        <day_4>
+            <period block="A" start="08:14" end="09:15"></period>
+            <period block="D" start="09:19" end="10:20"></period>
+            <period block="E" start="10:24" end="11:25"></period>
+            <period block="F" start="11:29" end="12:30"></period>
+            <period block="J" start="12:34" end="13:35"></period>
+            <period block="G" start="13:39" end="14:40"></period>
+        </day_4>
+        <day_5>
+            <period block="B" start="08:14" end="09:15"></period>
+            <period block="D" start="09:19" end="10:20"></period>
+            <period block="C" start="10:24" end="11:25"></period>
+            <period block="H" start="11:29" end="12:30"></period>
+            <period block="G" start="12:34" end="13:35"></period>
+            <period block="I" start="13:39" end="14:40"></period>
+        </day_5>
+    </day_types>
+    <special_dates>
+        <type desc="all_period_day">
+            <date>2014-06-13T04:00:00Z</date>
+			<date>2014-06-16T04:00:00Z</date>
+        </type>
+        <type desc="literacy_test_day">
+			<date>2014-03-27T04:00:00Z</date>
+        </type>
+        <type desc="examination_day">
+            <date>2014-01-29T05:00:00Z</date>
+			<date>2014-01-30T05:00:00Z</date>
+			<date>2014-01-31T05:00:00Z</date>
+			<date>2014-06-17T04:00:00Z</date>
+			<date>2014-06-18T04:00:00Z</date>
+			<date>2014-06-19T04:00:00Z</date>
+			<date>2014-06-20T04:00:00Z</date>
+			<date>2014-06-23T04:00:00Z</date>
+			<date>2014-06-24T04:00:00Z</date>
+			<date>2014-06-25T04:00:00Z</date>
+        </type>
+        <type desc="holiday">
+            <date>2013-10-11T04:00:00Z</date>
+			<date>2013-10-14T04:00:00Z</date>
+			<date>2013-12-20T05:00:00Z</date>
+			<date>2013-12-23T05:00:00Z</date>
+			<date>2013-12-24T05:00:00Z</date>
+			<date>2013-12-25T05:00:00Z</date>
+			<date>2013-12-26T05:00:00Z</date>
+			<date>2013-12-27T05:00:00Z</date>
+			<date>2013-12-30T05:00:00Z</date>
+			<date>2013-12-31T05:00:00Z</date>
+			<date>2014-01-01T05:00:00Z</date>
+			<date>2014-01-02T05:00:00Z</date>
+			<date>2014-01-03T05:00:00Z</date>
+			<date>2014-02-03T05:00:00Z</date>
+			<date>2014-02-17T05:00:00Z</date>
+			<date>2014-03-07T05:00:00Z</date>
+			<date>2014-03-10T04:00:00Z</date>
+			<date>2014-03-11T04:00:00Z</date>
+			<date>2014-03-12T04:00:00Z</date>
+			<date>2014-03-13T04:00:00Z</date>
+			<date>2014-03-14T04:00:00Z</date>
+			<date>2014-04-18T04:00:00Z</date>
+			<date>2014-04-21T04:00:00Z</date>
+			<date>2014-05-19T04:00:00Z</date>
+			<date>2014-06-26T04:00:00Z</date>
+			<date>2014-06-27T04:00:00Z</date>
+            <date>2014-06-30T04:00:00Z</date>
+            <date>2014-07-01T04:00:00Z</date>
+        </type>
+    </special_dates>
+</schedule>
