@@ -10,7 +10,7 @@ function SchoolPeriod(period) {
     
     this.getInfo = function() {
         
-        return this.block + " " +
+        return this.block + " ----- " +
             this.start.toTimeString() + " -> " +
             this.end.toTimeString();
         
@@ -78,7 +78,11 @@ function SchoolDay(now, key, catalog) {
     this.currentPeriodIndex = this.getCurrentPeriod();
     this.nextPeriodIndex = this.getNextPeriod();
     
-    console.log(this.currentPeriodIndex + " " + this.nextPeriodIndex);
+    this.getDescription = function() {
+        
+        
+        
+    }
     
 }
 
@@ -94,14 +98,22 @@ function init() {
 
 function updateDisplay() {
     
+    var datetime = document.getElementById('datetime');
+    var debug = document.getElementById('debug');
+    
     var now = new Date();
     var key = now.toDateString();
     
-    var schoolDay = new SchoolDay(now, key, window.schedule);
+    var sd = new SchoolDay(now, key, window.schedule);
     
+    var dtStr = now.toLocaleString() + " (" + sd.dayType + ")";
     
+    datetime.innerHTML = dtStr + "<br>";
+    debug.innerHTML = sd.description + "<br><br>";
     
-    
+    if (sd.isSchool == true)
+        for (var i = 0, ii = sd.periods.length; i < ii; i++)
+            debug.innerHTML = debug.innerHTML + sd.periods[i].getInfo() + "<br>";
 }
 
 function getFullSchedule() {
