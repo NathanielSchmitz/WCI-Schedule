@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <script>
+            
+            function validateForm() {
+                
+                var names = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+                var i = names.length;
+                
+                while (i--) {
+                    
+                    var val = document.getElementsByName(names[i])[0].value;
+                    val = val.toLowerCase();
+                    
+                    if (val == null || val == "") {
+                        val = "spare";
+                    }
+                    
+                    document.getElementsByName(names[i])[0].value = val;
+                    
+                    console.log(val);
+                    
+                }
+                
+            }
+        
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <h2>Configure Schedule</h2>
+        <p>Enter your courses below. If you have a spare, leave the field empty.</p>
+        
+        <form name="courses" action="schedule.html" onsubmit="return validateForm()" method="get">
+            <table border="0">
+                <tr><td>Block A:</td><td><input type="text" name="a" /></tr>
+                <tr><td>Block B:</td><td><input type="text" name="b" /></tr>
+                <tr><td>Block C:</td><td><input type="text" name="c" /></tr>
+                <tr><td>Block D:</td><td><input type="text" name="d" /></tr>
+                <tr><td>Block E:</td><td><input type="text" name="e" /></tr>
+                <tr><td>Block F:</td><td><input type="text" name="f" /></tr>
+                <tr><td>Block G:</td><td><input type="text" name="g" /></tr>
+                <tr><td>Block H:</td><td><input type="text" name="h" /></tr>
+                <tr><td>Block I:</td><td><input type="text" name="i" /></tr>
+                <tr><td>Block J:</td><td><input type="text" name="j" />
+                <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+            </table>
+        </form>
+    </body>
+</html>
+
