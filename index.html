@@ -1,41 +1,45 @@
-<!DOCTYPE html>
 
-<html>
+<!doctype html>
+<html class="no-js">
     <head>
         
         <script>
-            
             function validateForm() {
-                
                 var names = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
                 var i = names.length;
-                
                 while (i--) {
-                    
                     var val = document.getElementsByName(names[i])[0].value;
                     val = val.toLowerCase();
-                    
                     if (val == null || val == "") {
                         val = "spare";
                     }
-                    
                     document.getElementsByName(names[i])[0].value = val;
-                    
                     console.log(val);
-                    
                 }
-                
             }
-        
         </script>
         
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                        
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+                        
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
     </head>
-    
     <body>
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="main.js"></script>
         
         <h2>Configure Schedule</h2>
         <p>Enter your courses below. If you have a spare, leave the field empty.</p>
-        
         <form name="courses" action="schedule.html" onsubmit="return validateForm()" method="get">
             <table border="0">
                 <tr><td>Block A:</td><td><input type="text" name="a" /></tr>
@@ -51,6 +55,7 @@
                 <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
             </table>
         </form>
+
+
     </body>
 </html>
-

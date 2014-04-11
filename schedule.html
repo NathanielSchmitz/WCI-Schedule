@@ -1,13 +1,31 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                     
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+                     
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
     <body>
         
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="main.js"></script>
+
+
         <h2>WCI Schedule</h2>
         <h4 id="datetime"></h4>
         <p id="debug"></p>
         
-        <script language="javascript" src="front_end.js"></script>
+        <script language="javascript" src="main.js"></script>
         <button id="once" onclick="init()" type="button">Initialize</button>
         
     </body>
