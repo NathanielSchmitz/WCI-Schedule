@@ -4,14 +4,15 @@
 function SchoolPeriod(period) {
     
     this.block = period['block'];
+    this.name = window.urlParameters[this.block];
     this.start = new Date(period["start"]);
     this.end = new Date(period["end"]);
     
     this.getInfo = function() {
         
-        return this.block + " ----- " +
-        this.start.toTimeString() + " -> " +
-        this.end.toTimeString();
+        return "<td>" + this.block + "</td><td>" +
+        this.name + "</td><td>" +
+        this.start.toTimeString() + "</td>";
         
     };
 }
@@ -86,7 +87,7 @@ function SchoolDay(now, key, catalog) {
             
             if (now.getTime() < this.start) {
                 var firstPeriod = this.periods[this.nxtPerInd];
-                desc = desc + "Your first class, " + firstPeriod.block +
+                desc = desc + "Your first class, " + firstPeriod.name +
                        ", starts in " + getTextTimeDifference(now, firstPeriod.start) + ".";
             }
             else if (now.getTime() >= this.end) {
@@ -95,15 +96,15 @@ function SchoolDay(now, key, catalog) {
             else if (this.curPerInd < 0) {
                 var nextPeriod = this.periods[this.nxtPerInd];
                 desc = desc + "You have " + getTextTimeDifference(now, nextPeriod.start) +
-                       " to get to " + nextPeriod.block + ".";
+                       " to get to " + nextPeriod.name + ".";
             }
             else {
                 
                 var curPer = this.periods[this.curPerInd];
-                desc = desc + "You have " + getTextTimeDifference(now, curPer.end) + " left in " + curPer.block + ".";
+                desc = desc + "You have " + getTextTimeDifference(now, curPer.end) + " left in " + curPer.name + ".";
                 
                 if (this.nxtPerInd > 0)
-                    desc = desc + " Your next period is " + this.periods[this.nxtPerInd].block + ".";
+                    desc = desc + " Your next period is " + this.periods[this.nxtPerInd].name + ".";
                 
             }
         }
@@ -117,8 +118,35 @@ function SchoolDay(now, key, catalog) {
     
 }
 
+function toNiceFormat(text) {
+    var nt = text.split('_').join(' ');
+    return toSentenceCase(nt);
+}
+
+function toSentenceCase(text) {
+    return text.toLowerCase().replace(/\b[a-z](?=[a-z]{2})/g,
+        function(letter) { return letter.toUpperCase(); } );
+}
+
+function getUrlParameters() {
+    
+    var x = new Object();
+    
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        var name = pair[1].split('+').join(' ');
+        x[pair[0].toUpperCase()] = toSentenceCase(name);
+    }
+    
+    return x;
+}
+
 function init() {
     
+    window.urlString = window.location.toString();
+    window.urlParameters = getUrlParameters();
     window.schedule = getFullSchedule();
     
     setInterval(updateDisplay, 1000);
@@ -136,14 +164,19 @@ function updateDisplay() {
     var key = now.toDateString();
     
     var sd = new SchoolDay(now, key, window.schedule);
-    var dtStr = now.toLocaleString() + " (" + sd.dayType + ")";
+    var dtStr = now.toLocaleString() + " (" + toNiceFormat(sd.dayType) + ")";
     
     datetime.innerHTML = dtStr + "<br>";
     debug.innerHTML = sd.getDescription() + "<br><br>";
     
-    if (sd.isSchool === true)
+    var tableText = "";
+    if (sd.isSchool === true) {
+        tableText = tableText + "<table border='0'><tr><td>Block</td><td>Name</td><td>Start</td></tr>";
         for (var i = 0, ii = sd.periods.length; i < ii; i++)
-            debug.innerHTML = debug.innerHTML + sd.periods[i].getInfo() + "<br>";
+            tableText = tableText + "<tr>" + sd.periods[i].getInfo() + "</tr>";
+        tableText = tableText + "</table>";
+    }
+    debug.innerHTML = debug.innerHTML + tableText;
 }
 
 function getWordsFromSeconds(s) {
