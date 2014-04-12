@@ -241,7 +241,7 @@ function updateDisplay() {
     var key = now.toDateString();
     
     var sd = new SchoolDay(now, key, window.schedule);
-    var dtStr = now.toLocaleString() + " (" + toNiceFormat(sd.dayType) + ")";
+    var dtStr = formatDate(now, 'ddd, MMM d \\a\\t h:mm:ss TT', false) + " (" + toNiceFormat(sd.dayType) + ")";
     
     datetime.innerHTML = dtStr + "<br>";
     debug.innerHTML = sd.getDescription() + "<br><br>";
