@@ -415,8 +415,9 @@ optgroup {
  */
 
 table {
-	border-collapse:collapse;
-	border:1px solid black;
+	border-collapse: collapse;
+	border: 1px solid black;
+	font-size: 0.8em;
 }
 
 td,
@@ -425,9 +426,9 @@ th {
 }
 
 .card {
-	border:1px solid black;
-	padding:10px 10px 13px 10px;
-	margin:10px 0px 10px 0px;
+	border: 1px solid black;
+	padding: 10px 10px 13px 10px;
+	margin: 10px 0px 10px 0px;
 }
 
 h4 {
