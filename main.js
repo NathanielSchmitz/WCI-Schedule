@@ -196,7 +196,7 @@ function createCard(now, key, today) {
         var tableText = "";
         if (school.isSchool === true) {
             tableText = "<br>";
-            tableText = tableText + "<table border='1'><tr><th>Block</th><th>Name</th><th>Start</th></tr>";
+            tableText = tableText + "<table>";//<tr><th>Block</th><th>Name</th><th>Start</th></tr>";
             for (var i = 0, ii = school.periods.length; i < ii; i++)
                 tableText = tableText + "<tr>" + school.periods[i].getInfo() + "</tr>";
             tableText = tableText + "</table>";
@@ -216,7 +216,7 @@ function createCard(now, key, today) {
         var tableText = "";
         if (school.isSchool === true) {
             tableText = "<br>";
-            tableText = tableText + "<table border='1'><tr><th>Block</th><th>Name</th><th>Start</th></tr>";
+            tableText = tableText + "<table>";//<tr><th>Block</th><th>Name</th><th>Start</th></tr>";
             for (var i = 0, ii = school.periods.length; i < ii; i++)
                 tableText = tableText + "<tr>" + school.periods[i].getInfo() + "</tr>";
             tableText = tableText + "</table>";
