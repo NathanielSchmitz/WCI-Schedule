@@ -186,7 +186,7 @@ function SchoolDay(now, key, catalog) {
             }
         }
         else {
-            desc = desc + "You have no school today (" + this.dayType + ").";
+            desc = desc + "You have no school today.";
         }
         
         return desc;
@@ -229,7 +229,7 @@ function init() {
     setInterval(updateDisplay, 1000);
     updateDisplay();
     
-    document.getElementById('once').disabled = true;
+//    document.getElementById('once').disabled = true;
 }
 
 function updateDisplay() {
