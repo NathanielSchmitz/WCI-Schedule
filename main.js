@@ -183,9 +183,6 @@ function createCard(now, key, today) {
     if (today === true) {
         
         var school = new SchoolDay(now, key, window.schedule);
-        
-        console.log(school.getInfo());
-        
         var niceDate = toNiceFormat(school.dayType);
         var dateFormat = "ddd, MMM d \\a\\t h:mm:ss TT";
         var header = formatDate(now, dateFormat, false) + " (" + niceDate + ")";
@@ -207,7 +204,7 @@ function createCard(now, key, today) {
     } else {
         
         var school = new NextSchoolDay(key, window.schedule);
-        var niceDate = toNiceFormat(school.daytype);
+        var niceDate = toNiceFormat(school.dayType);
         var dateFormat = "ddd, MMM d";
         var header = formatDate(now, dateFormat, false) + " (" + niceDate + ")";
         
@@ -215,8 +212,7 @@ function createCard(now, key, today) {
         
         var tableText = "";
         if (school.isSchool === true) {
-            tableText = "<br>";
-            tableText = tableText + "<table>";//<tr><th>Block</th><th>Name</th><th>Start</th></tr>";
+            tableText = tableText + "<table style='margin-top:10px;'>";//<tr><th>Block</th><th>Name</th><th>Start</th></tr>";
             for (var i = 0, ii = school.periods.length; i < ii; i++)
                 tableText = tableText + "<tr>" + school.periods[i].getInfo() + "</tr>";
             tableText = tableText + "</table>";
@@ -241,8 +237,9 @@ function updateDisplay() {
 	card.innerHTML = createCard(now, key, true);
     
     // get the next school day
-    var newDate = addDays(now, i + 2);
-    card.innerHTML = createCard(newDate, newDate.toDateString(), false);
+    var newDate = addDays(now, 1);
+    var newKey = newDate.toDateString();
+    card.innerHTML = card.innerHTML + createCard(newDate, newKey, false);
 
 }
 
