@@ -222,7 +222,7 @@ function createCard(now, key, today) {
         
         var tableText = "";
         if (school.isSchool === true) {
-            tableText = tableText + "<table style='margin-top:10px;'>";//<tr><th>Block</th><th>Name</th><th>Start</th></tr>";
+            tableText = tableText + "<table style='margin-top:12px;'>";//<tr><th>Block</th><th>Name</th><th>Start</th></tr>";
             for (var i = 0, ii = school.periods.length; i < ii; i++)
                 tableText = tableText + "<tr>" + school.periods[i].getInfo() + "</tr>";
             tableText = tableText + "</table>";
