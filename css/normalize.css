@@ -18,6 +18,7 @@ html {
 
 body {
     margin: 0;
+	background-color: #D4D7DC;
 }
 
 /* HTML5 display definitions
@@ -428,13 +429,14 @@ th {
 }
 
 .card {
-	border: 1px solid black;
+	border: 1px solid #C0C0C5;
 	padding: 10px 10px 13px 10px;
-	margin: 10px 0px 10px 0px;
+	margin: 10px 10px 10px 10px;
+	background-color: white;
 }
 
 h2 {
-	margin: 20px 0px 15px 0px;
+	margin: 0px 0px 0px 0px;
 }
 
 h4 {
@@ -445,4 +447,18 @@ h4 {
 p {
 	text-align: center;
 	margin: 0px 0px 0px 0px;
+}
+
+.nav {
+	
+	width: 100%;
+	padding: 20px 0px 12px 0px;
+	background-color: #43609A;
+	color: white;
+	
+    list-style: none;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+
 }
