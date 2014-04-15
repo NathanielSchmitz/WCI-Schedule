@@ -416,8 +416,13 @@ optgroup {
 
 table {
 	border-collapse: collapse;
+<<<<<<< HEAD
 	border: 0px solid black;
 	font-size: 0.9em;
+=======
+	border: 1px solid black;
+	font-size: 0.8em;
+>>>>>>> FETCH_HEAD
 }
 
 td,
