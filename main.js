@@ -12,7 +12,7 @@ function SchoolPeriod(period) {
         
         return "<td align='center'>" + this.block + "</td><td>" +
         this.name + "</td><td>" +
-        formatDate(this.start, "hh:mm:ss TT", false) + "</td>";
+        formatDate(this.start, "hh:mm TT", false) + "</td>";
         
     };
 }
@@ -240,40 +240,9 @@ function updateDisplay() {
     var key = now.toDateString();
 	card.innerHTML = createCard(now, key, true);
     
-//    var totalText = "";
-//    var i = 1;
-//    while (i > 0) {
-//
-//        var newDate = addDays(now, i + 1);
-//        var newCard = "<div class='card'>";
-//        var nowSd = new SchoolDay(newDate, newDate.toDateString(), window.schedule);
-//        
-//        console.log(nowSd.getInfo());
-//        
-//        if (nowSd.isSchool === true) {
-//            
-//            var dtStr = formatDate(newDate, 'ddd, MMM d', false) + " (" + toNiceFormat(nowSd.dayType) + ")";
-//            
-//            newCard = newCard + "<h4>" + dtStr + "</h4>";
-//            var tableText = "";
-//            tableText = "<br>";
-//            tableText = tableText + "<table border='1'><tr><th>Block</th><th>Name</th><th>Start</th></tr>";
-////            for (var i = 0, ii = nowSd.periods.length; i < ii; i++)
-////                tableText = tableText + "<tr>" + nowSd.periods[i].getInfo() + "</tr>";
-//            tableText = tableText + "</table>";
-//            newCard = newCard + tableText;
-//
-//            newCard = newCard + "</div>";
-//            totalText = totalText + newCard;
-//            
-//            i = i - 1;
-//        }
-//        
-//    }
-    
-//    console.log(totalText);
-    
-//    card.innerHTML = card.innerHTML + totalText;
+    // get the next school day
+    var newDate = addDays(now, i + 2);
+    card.innerHTML = createCard(newDate, newDate.toDateString(), false);
 
 }
 
